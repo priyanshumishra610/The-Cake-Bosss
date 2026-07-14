@@ -123,7 +123,7 @@
 		margin-bottom: 0px;
 	}
 	.main_header_area + section, .main_header_area + div, .main_header_area + .row {
-		margin-top: 117px;
+		margin-top: 70px;
 	}
 	.navbar-toggler[aria-expanded="false"] .my_toggle_menu span:nth-child(2) {
 		opacity: 1;
@@ -591,7 +591,7 @@
 		display: none;
 	}
 	.main_header_area + section, .main_header_area + div, .main_header_area + .row {
-		margin-top: 167px;
+		margin-top: 70px;
 	}
 	.cake_feature_slider .cake_feature_slider {
 		top: -130px;
@@ -962,7 +962,7 @@
 		right: -10px;
 	}
 	.main_header_area + section, .main_header_area + div, .main_header_area + .row {
-		margin-top: 202px;
+		margin-top: 70px;
 	}
 	.blog_item {
 		margin-bottom: 50px;
@@ -1020,5 +1020,346 @@
 	}
 	.s_comment_area .s_comment_inner {
 		padding: 30px 18px;
+	}
+}
+
+/* ============================================================
+   Mobile-first polish (max-width only — desktop unchanged)
+   ============================================================ */
+@media (max-width: 991px) {
+	html,
+	body {
+		overflow-x: hidden;
+	}
+
+	.sweet_moment_card {
+		max-width: 260px;
+	}
+
+	.navbar-brand img {
+		max-width: 44px;
+		height: 44px !important;
+		width: 44px !important;
+		object-fit: cover;
+		border-radius: 50%;
+	}
+
+	.navbar-brand .brand_text {
+		font-size: 16px;
+	}
+
+	.main_menu_area .navbar.navbar-expand-lg .navbar-brand {
+		position: relative;
+		left: auto;
+		transform: none;
+		padding-top: 0;
+	}
+
+	.cake_feature_item img,
+	.welcome_img img,
+	.arivals_pic img,
+	.service_img img,
+	.s_left_img img,
+	.s_right_img img,
+	.s_item_right img,
+	.footer_widgets img,
+	.price_list_area img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	.main_header_area + section,
+	.main_header_area + div,
+	.main_header_area + .row {
+		margin-top: 70px;
+	}
+
+	.main_slider_area {
+		overflow: hidden;
+	}
+
+	.main_slider_area .tp-leftarrow,
+	.main_slider_area .tp-rightarrow {
+		display: none !important;
+	}
+
+	.discover_menu_inner {
+		margin-top: 0;
+		padding-left: 20px;
+		padding-right: 20px;
+		max-width: 100%;
+	}
+
+	.discover_item_inner .discover_item {
+		max-width: 100%;
+	}
+
+	.price_list_inner .welcome_img img,
+	.price_list_area .welcome_img img {
+		width: 100%;
+		height: auto;
+		display: block;
+		margin-bottom: 20px;
+	}
+
+	.price_list_inner .col-lg-6 {
+		max-width: 100%;
+		flex: 0 0 100%;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.map_area {
+		width: 100%;
+		overflow: hidden;
+		line-height: 0;
+	}
+
+	.map_area iframe {
+		width: 100% !important;
+		max-width: 100%;
+		height: 320px;
+	}
+
+	.contact_form_area .form-control {
+		max-width: 100%;
+	}
+
+	.special_item_inner .specail_item .row > [class*="col-"] {
+		margin-bottom: 20px;
+	}
+
+	.s_left_img img,
+	.s_right_img img,
+	.s_item_right img {
+		width: 100%;
+		height: auto;
+	}
+
+	.arivals_chocolate .arivals_text {
+		position: relative;
+		left: 0;
+		top: auto;
+		transform: none;
+		padding: 20px 0 0;
+		text-align: left;
+	}
+
+	.arivals_chocolate .arivals_pic {
+		position: relative;
+	}
+
+	.cake_feature_item .cake_img img.cake_product_img {
+		width: 100% !important;
+		height: auto !important;
+		max-width: 100%;
+	}
+
+	.container {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	.main_title h5,
+	.main_title p {
+		font-size: 15px;
+		line-height: 26px;
+	}
+
+	.main_title h5 br {
+		display: none;
+	}
+}
+
+@media (max-width: 767px) {
+	.main_header_area + section,
+	.main_header_area + div,
+	.main_header_area + .row {
+		margin-top: 70px;
+	}
+
+	.top_header_area .float-left a {
+		font-size: 13px;
+		line-height: 28px;
+		padding: 6px 0;
+	}
+
+	.top_header_area .container {
+		padding-top: 6px;
+		padding-bottom: 6px;
+	}
+
+	.banner_area {
+		background-position: center center;
+		background-size: cover;
+	}
+
+	.banner_text h3 {
+		font-size: 36px;
+	}
+
+	.banner_text ul {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.cake_feature_row .col-6 {
+		padding-left: 8px;
+		padding-right: 8px;
+	}
+
+	.cake_feature_item {
+		margin-bottom: 20px;
+	}
+
+	.cake_feature_item .cake_text h3 {
+		font-size: 18px;
+	}
+
+	.cake_feature_item .cake_text h4 {
+		font-size: 16px;
+	}
+
+	.discover_menu_inner {
+		padding-top: 50px;
+		padding-bottom: 50px;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	.discover_item_inner .discover_item h4 {
+		font-size: 18px;
+	}
+
+	.discover_item_inner .discover_item p {
+		font-size: 14px;
+	}
+
+	.footer_widgets {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.owl-carousel .owl-item img {
+		max-width: 100%;
+	}
+
+	.welcome_bakery_inner .welcome_img img {
+		width: 100%;
+		height: auto;
+	}
+
+	.special_item_inner .specail_item .special_item_text {
+		padding-left: 0;
+		padding-right: 0;
+		max-width: 100%;
+	}
+
+	.map_area iframe {
+		height: 280px;
+	}
+}
+
+@media (max-width: 575px) {
+	.main_header_area + section,
+	.main_header_area + div,
+	.main_header_area + .row {
+		margin-top: 70px;
+	}
+
+	.navbar-light .navbar-toggler {
+		margin-top: 16px;
+		margin-bottom: 16px;
+	}
+
+	.banner_text h3 {
+		font-size: 30px;
+		padding-top: 40px;
+	}
+
+	.banner_text {
+		padding-bottom: 40px;
+	}
+
+	.main_title {
+		padding-bottom: 30px;
+	}
+
+	.main_title h2 {
+		font-size: 28px;
+	}
+
+	.pest_btn,
+	.pink_btn,
+	.pest_w_btn {
+		display: inline-block;
+		max-width: 100%;
+		white-space: normal;
+		text-align: center;
+	}
+
+	.cake_feature_row .col-6 {
+		max-width: 50%;
+		flex: 0 0 50%;
+	}
+
+	.our_cakes_area .cake_feature_row .cake_feature_item {
+		max-width: 100%;
+		margin: 0 0 24px;
+	}
+
+	.arivals_chocolate .arivals_text h4 {
+		font-size: 28px;
+	}
+
+	.client_says_slider .item .media .media-body p {
+		font-size: 16px;
+		line-height: 26px;
+	}
+
+	.copyright_inner {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+
+@media (max-width: 480px) {
+	.main_header_area + section,
+	.main_header_area + div,
+	.main_header_area + .row {
+		margin-top: 70px;
+	}
+
+	.top_header_area .float-left a {
+		font-size: 12px;
+		line-height: 24px;
+	}
+
+	.cake_feature_row .col-6 {
+		max-width: 100%;
+		flex: 0 0 100%;
+	}
+
+	.our_cakes_area .cake_feature_row .cake_feature_item,
+	.cake_feature_main .cake_feature_row .cake_feature_item {
+		max-width: 100%;
+		margin: 0 auto 24px;
+	}
+
+	.banner_text h3 {
+		font-size: 26px;
+	}
+
+	.map_area iframe {
+		height: 240px;
+	}
+
+	.contact_details {
+		word-break: break-word;
+	}
+
+	.main_menu_area .navbar.navbar-expand-lg .navbar-collapse,
+	.main_menu_two .navbar.navbar-expand-lg .navbar-collapse {
+		max-height: 70vh;
 	}
 }

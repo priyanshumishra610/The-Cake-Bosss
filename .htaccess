@@ -1,0 +1,13 @@
+# Clean URLs — redirect old .html paths to folder URLs
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+
+	RewriteRule ^about-us\.html$ about-us/ [R=301,L]
+	RewriteRule ^cake\.html$ cake/ [R=301,L]
+	RewriteRule ^service\.html$ service/ [R=301,L]
+	RewriteRule ^menu\.html$ menu/ [R=301,L]
+	RewriteRule ^cart\.html$ cart/ [R=301,L]
+	RewriteRule ^contact\.html$ contact/ [R=301,L]
+</IfModule>
+
+ErrorDocument 404 /404.html

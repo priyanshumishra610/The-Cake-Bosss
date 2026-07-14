@@ -1,0 +1,7 @@
+# Netlify-style redirects for old .html URLs
+/about-us.html  /about-us/  301
+/cake.html      /cake/      301
+/service.html   /service/   301
+/menu.html      /menu/      301
+/cart.html      /cart/      301
+/contact.html   /contact/   301
