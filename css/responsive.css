@@ -1033,7 +1033,8 @@
 	}
 
 	.sweet_moment_card {
-		max-width: 260px;
+		max-width: 100%;
+		min-height: 0;
 	}
 
 	.navbar-brand img {
