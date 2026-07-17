@@ -6754,7 +6754,7 @@ i:before {
 
 .sweet_moment_card {
   position: relative;
-  background: #1a1a1a;
+  background: #f4f4f4;
   border-radius: 18px;
   overflow: hidden;
   margin: 0 auto 30px;
@@ -6777,16 +6777,35 @@ i:before {
   transform: translateY(-4px);
 }
 
+.sweet_moment_poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 1;
+}
+
+.sweet_moment_card:not(.is-active) .sweet_moment_poster {
+  filter: brightness(0.92);
+}
+
 .sweet_moment_video {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  background: #111;
+  background: transparent;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 200ms ease;
 }
 
-.sweet_moment_card:not(.is-active) .sweet_moment_video {
-  filter: brightness(0.72);
+.sweet_moment_card.is-active .sweet_moment_video {
+  opacity: 1;
 }
 
 .sweet_moment_pulse {
@@ -6800,6 +6819,7 @@ i:before {
   opacity: 0;
   box-shadow: 0 0 0 0 rgba(241, 149, 178, 0.6);
   pointer-events: none;
+  z-index: 3;
 }
 
 .sweet_moment_card.is-active .sweet_moment_pulse {
