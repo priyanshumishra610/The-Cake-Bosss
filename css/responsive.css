@@ -1024,16 +1024,53 @@
 }
 
 /* ============================================================
-   Mobile-first polish (max-width only — desktop unchanged)
+   Mobile experience polish (max-width only — desktop unchanged)
    ============================================================ */
+
+/* Tablet: stop horizontal overflow */
+@media (max-width: 1199px) {
+	.main_slider_area {
+		overflow: hidden;
+	}
+
+	.main_slider_area .tp-leftarrow,
+	.main_slider_area .tp-rightarrow {
+		display: none !important;
+	}
+
+	.cart_table_area .table-responsive .table tbody tr:last-child td .form-inline,
+	.cart_table_area .table-responsive .table tbody tr:last-child td .pest_btn {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+}
+
 @media (max-width: 991px) {
+	html {
+		-webkit-text-size-adjust: 100%;
+		text-size-adjust: 100%;
+	}
+
 	html,
 	body {
 		overflow-x: hidden;
 	}
 
-	.sweet_moment_card {
-		max-width: 260px;
+	body {
+		-webkit-tap-highlight-color: rgba(241, 149, 178, 0.2);
+	}
+
+	.container {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+
+	.navbar-brand {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		max-width: calc(100% - 56px);
+		margin-right: 8px;
 	}
 
 	.navbar-brand img {
@@ -1042,10 +1079,13 @@
 		width: 44px !important;
 		object-fit: cover;
 		border-radius: 50%;
+		flex-shrink: 0;
 	}
 
 	.navbar-brand .brand_text {
 		font-size: 16px;
+		line-height: 1.15;
+		white-space: normal;
 	}
 
 	.main_menu_area .navbar.navbar-expand-lg .navbar-brand {
@@ -1053,6 +1093,61 @@
 		left: auto;
 		transform: none;
 		padding-top: 0;
+	}
+
+	.navbar-light .navbar-toggler {
+		min-width: 44px;
+		min-height: 44px;
+		padding: 8px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		border: 0;
+	}
+
+	.my_toggle_menu {
+		width: 28px;
+		height: 28px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding-top: 0;
+		margin: 0 auto;
+	}
+
+	.main_menu_area .navbar.navbar-expand-lg .navbar-collapse,
+	.main_menu_two .navbar.navbar-expand-lg .navbar-collapse {
+		max-height: min(75vh, 520px);
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+		overscroll-behavior: contain;
+	}
+
+	.main_menu_two .navbar.navbar-expand-lg .navbar-nav > li > a,
+	.main_menu_area .navbar.navbar-expand-lg .navbar-nav > li > a {
+		padding-left: 14px;
+		padding-right: 14px;
+		min-height: 48px;
+		display: flex;
+		align-items: center;
+	}
+
+	.pest_btn,
+	.pest_w_btn,
+	.pink_btn,
+	.w_view_btn,
+	.main_btn {
+		min-height: 44px;
+		line-height: 44px;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.cake_feature_slider .cake_feature_slider .owl-prev,
+	.cake_feature_slider .cake_feature_slider .owl-next {
+		width: 44px;
+		height: 44px;
+		line-height: 42px;
 	}
 
 	.cake_feature_item img,
@@ -1153,11 +1248,8 @@
 		width: 100% !important;
 		height: auto !important;
 		max-width: 100%;
-	}
-
-	.container {
-		padding-left: 15px;
-		padding-right: 15px;
+		aspect-ratio: 1;
+		object-fit: cover;
 	}
 
 	.main_title h5,
@@ -1168,6 +1260,21 @@
 
 	.main_title h5 br {
 		display: none;
+	}
+
+	.sweet_moments_grid > [class*="col-"] {
+		display: flex;
+		justify-content: center;
+	}
+
+	.sweet_moment_card {
+		max-width: 300px;
+		width: 100%;
+	}
+
+	.sweet_moment_card:hover,
+	.sweet_moment_card.is-active {
+		transform: none;
 	}
 }
 
@@ -1195,12 +1302,21 @@
 	}
 
 	.banner_text h3 {
-		font-size: 36px;
+		font-size: 34px;
 	}
 
 	.banner_text ul {
 		flex-wrap: wrap;
 		justify-content: center;
+		gap: 4px 0;
+	}
+
+	.banner_text ul li a {
+		font-size: 15px;
+		padding: 10px 8px;
+		min-height: 44px;
+		display: inline-flex;
+		align-items: center;
 	}
 
 	.cake_feature_row .col-6 {
@@ -1240,6 +1356,44 @@
 		padding-right: 0;
 	}
 
+	.f_about_widget .nav li a {
+		width: 44px;
+		height: 44px;
+		line-height: 42px;
+	}
+
+	.f_link_widget .list_style li a {
+		display: block;
+		padding: 10px 0;
+		min-height: 44px;
+		line-height: 24px;
+	}
+
+	.f_contact_widget p,
+	.f_contact_widget h5 {
+		word-break: break-word;
+		overflow-wrap: anywhere;
+	}
+
+	.copyright_inner .float-left,
+	.copyright_inner .float-right {
+		float: none;
+		text-align: center;
+		display: block;
+	}
+
+	.copyright_inner .float-right {
+		margin-top: 10px;
+	}
+
+	.copyright_inner .float-right a {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 44px;
+		padding: 0 12px;
+	}
+
 	.owl-carousel .owl-item img {
 		max-width: 100%;
 	}
@@ -1258,6 +1412,70 @@
 	.map_area iframe {
 		height: 280px;
 	}
+
+	.contact_us_form .form-group input,
+	.contact_us_form .form-group textarea,
+	.contact_form_area .form-control {
+		font-size: 16px;
+		min-height: 48px;
+	}
+
+	.contact_us_form .form-group textarea {
+		min-height: 120px;
+	}
+
+	.contact_us_form .form-group .order_s_btn,
+	.contact_form_area .order_s_btn {
+		width: 100%;
+		min-height: 48px;
+		line-height: 48px;
+		padding: 0 16px;
+	}
+
+	.contact_details .contact_d_item h5 a {
+		display: inline-block;
+		padding: 8px 0;
+		word-break: break-word;
+	}
+
+	.sweet_moments_grid > [class*="col-"] {
+		flex: 0 0 50%;
+		max-width: 50%;
+		padding-left: 6px;
+		padding-right: 6px;
+	}
+
+	.sweet_moment_card {
+		max-width: none;
+		margin-bottom: 12px;
+		border-radius: 14px;
+	}
+
+	.sweet_moments_area.p_100 {
+		padding-top: 56px;
+		padding-bottom: 56px;
+	}
+
+	.sweet_moments_area .main_title {
+		padding-bottom: 20px;
+	}
+
+	.title_view_all .float-left,
+	.title_view_all .float-right {
+		float: none;
+		display: block;
+		width: 100%;
+	}
+
+	.title_view_all .float-right {
+		margin-top: 12px;
+	}
+
+	.title_view_all .float-right .pest_btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	}
 }
 
 @media (max-width: 575px) {
@@ -1268,25 +1486,35 @@
 	}
 
 	.navbar-light .navbar-toggler {
-		margin-top: 16px;
-		margin-bottom: 16px;
+		margin-top: 12px;
+		margin-bottom: 12px;
+	}
+
+	.navbar-brand .brand_text {
+		font-size: 14px;
+		max-width: min(42vw, 140px);
 	}
 
 	.banner_text h3 {
-		font-size: 30px;
-		padding-top: 40px;
+		font-size: 28px;
+		padding-top: 36px;
 	}
 
 	.banner_text {
-		padding-bottom: 40px;
+		padding-bottom: 36px;
 	}
 
 	.main_title {
-		padding-bottom: 30px;
+		padding-bottom: 28px;
 	}
 
 	.main_title h2 {
 		font-size: 28px;
+	}
+
+	.p_100 {
+		padding-top: 60px;
+		padding-bottom: 60px;
 	}
 
 	.pest_btn,
@@ -1309,7 +1537,7 @@
 	}
 
 	.arivals_chocolate .arivals_text h4 {
-		font-size: 28px;
+		font-size: 26px;
 	}
 
 	.client_says_slider .item .media .media-body p {
@@ -1320,6 +1548,45 @@
 	.copyright_inner {
 		padding-left: 10px;
 		padding-right: 10px;
+	}
+
+	.main_slider_area .rev_slider ul li .slider_text_box .main_btn {
+		padding: 0 24px;
+		line-height: 46px;
+		font-size: 15px;
+		min-height: 46px;
+	}
+
+	.main_slider_area .rev_slider ul li .slider_text_box .price h3 {
+		height: 64px !important;
+		width: 64px !important;
+		line-height: 62px !important;
+		font-size: 20px !important;
+	}
+
+	.footer_wd_inner > [class*="col-"] {
+		margin-bottom: 28px;
+	}
+
+	.newsletter_form .input-group {
+		flex-wrap: wrap;
+	}
+
+	.newsletter_form .input-group .form-control {
+		width: 100%;
+		font-size: 16px;
+		min-height: 48px;
+	}
+
+	.newsletter_form .input-group .input-group-append {
+		width: 100%;
+		margin-left: 0;
+		margin-top: 10px;
+	}
+
+	.newsletter_form .input-group .input-group-append button {
+		width: 100%;
+		min-height: 48px;
 	}
 }
 
@@ -1361,5 +1628,42 @@
 	.main_menu_area .navbar.navbar-expand-lg .navbar-collapse,
 	.main_menu_two .navbar.navbar-expand-lg .navbar-collapse {
 		max-height: 70vh;
+	}
+
+	.sweet_moments_grid > [class*="col-"] {
+		flex: 0 0 100%;
+		max-width: 100%;
+		padding-left: 12px;
+		padding-right: 12px;
+	}
+
+	.sweet_moment_card {
+		max-width: 280px;
+	}
+
+	.client_says_slider .item .media {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.client_says_slider .item .media .d-flex {
+		justify-content: center;
+		margin-bottom: 8px;
+	}
+}
+
+@supports (padding: max(0px)) {
+	@media (max-width: 991px) {
+		body {
+			padding-left: env(safe-area-inset-left);
+			padding-right: env(safe-area-inset-right);
+		}
+
+		.main_menu_two,
+		.main_menu_area,
+		.footer_copyright {
+			padding-left: env(safe-area-inset-left);
+			padding-right: env(safe-area-inset-right);
+		}
 	}
 }
