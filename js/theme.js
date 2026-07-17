@@ -456,23 +456,40 @@
     $('.imageGallery1 .light').simpleLightbox();
 
 	/*----------------------------------------------------*/
-    /*  Sweet Moments sequential autoplay
+    /*  Sweet Moments sequential autoplay + mobile scroll
     /*----------------------------------------------------*/
 	function sweetMomentsPlayer(){
 		var $root = $('#sweetMomentsPlayer');
 		if (!$root.length) return;
 
 		var $cards = $root.find('.sweet_moment_card');
+		var $slides = $root.find('.sweet_moment_slide');
 		var videos = $cards.find('.sweet_moment_video').toArray();
 		var index = 0;
 		var started = false;
+		var scrollTimer = null;
+		var isMobile = function(){
+			return window.matchMedia('(max-width: 991px)').matches;
+		};
 
 		function setActive(i){
 			$cards.removeClass('is-active');
 			$cards.eq(i).addClass('is-active');
 		}
 
-		function playAt(i){
+		function scrollCardIntoView(i){
+			if (!isMobile()) return;
+			var scroller = $root[0];
+			var slide = $slides.get(i);
+			if (!scroller || !slide) return;
+			var left = slide.offsetLeft - (scroller.clientWidth - slide.clientWidth) / 2;
+			scroller.scrollTo({
+				left: Math.max(0, left),
+				behavior: 'smooth'
+			});
+		}
+
+		function playAt(i, fromScroll){
 			index = i;
 			videos.forEach(function(video, n){
 				if (n === i) return;
@@ -480,6 +497,9 @@
 				try { video.currentTime = 0; } catch (e) {}
 			});
 			setActive(i);
+			if (!fromScroll) {
+				scrollCardIntoView(i);
+			}
 			var current = videos[i];
 			current.muted = true;
 			var playPromise = current.play();
@@ -489,7 +509,24 @@
 		}
 
 		function playNext(){
-			playAt((index + 1) % videos.length);
+			playAt((index + 1) % videos.length, false);
+		}
+
+		function nearestSlideIndex(){
+			var rootRect = $root[0].getBoundingClientRect();
+			var centerX = rootRect.left + rootRect.width / 2;
+			var best = 0;
+			var bestDist = Infinity;
+			$slides.each(function(i){
+				var r = this.getBoundingClientRect();
+				var mid = r.left + r.width / 2;
+				var dist = Math.abs(mid - centerX);
+				if (dist < bestDist) {
+					bestDist = dist;
+					best = i;
+				}
+			});
+			return best;
 		}
 
 		videos.forEach(function(video, i){
@@ -497,8 +534,19 @@
 				playNext();
 			});
 			$cards.eq(i).on('click', function(){
-				playAt(i);
+				playAt(i, false);
 			});
+		});
+
+		$root.on('scroll', function(){
+			if (!isMobile() || !started) return;
+			clearTimeout(scrollTimer);
+			scrollTimer = setTimeout(function(){
+				var nearest = nearestSlideIndex();
+				if (nearest !== index) {
+					playAt(nearest, true);
+				}
+			}, 120);
 		});
 
 		function startWhenVisible(){
@@ -508,11 +556,11 @@
 			var inView = rect.top < window.innerHeight * 0.9 && rect.bottom > 0;
 			if (inView) {
 				started = true;
-				playAt(0);
+				playAt(0, false);
 			}
 		}
 
-		$(window).on('scroll load', startWhenVisible);
+		$(window).on('scroll load resize', startWhenVisible);
 		startWhenVisible();
 	}
 	sweetMomentsPlayer();

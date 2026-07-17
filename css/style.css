@@ -6747,6 +6747,15 @@ i:before {
   margin-right: auto;
 }
 
+.sweet_moments_hint {
+  display: none;
+}
+
+.sweet_moments_scroller {
+  position: relative;
+  z-index: 1;
+}
+
 .sweet_moments_grid {
   position: relative;
   z-index: 1;
