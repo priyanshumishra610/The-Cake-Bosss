@@ -179,51 +179,56 @@
     /*  Main Slider js
     /*----------------------------------------------------*/
     function main_slider5(){
-        if ( $('#main_slider5').length ){
-            $("#main_slider5").revolution({
-                sliderType:"standard",
-                sliderLayout:"auto",
-                delay:4000000,
-                disableProgressBar:"on",
-                navigation: {
-                    onHoverStop: 'off',
-                    touch:{
-                        touchenabled:"on"
-                    },
-                    arrows: {
-                        style:"zeus",
-                        enable:true,
-                        hide_onmobile:true,
-                        hide_under:992,
-                        hide_onleave:true,
-                        hide_delay:200,
-                        hide_delay_mobile:1200,
-                        tmp:'<div class="tp-title-wrap">  	<div class="tp-arr-imgholder"></div> </div>',
-                        left: {
-                            h_align: "left",
-                            v_align: "center",
-                            h_offset: 50,
-                            v_offset: 0
-                        },
-                        right: {
-                            h_align: "right",
-                            v_align: "center",
-                            h_offset: 50,
-                            v_offset: 0
-                        }
-                    },
-                },
-                responsiveLevels:[4096,1370,1199,992,767,480],
-                gridwidth:[1170,1170,970,750,700,400],
-                gridheight:[620,620,620,550,550,500],
-                lazyType:"smart",
-                fallbacks: {
-                    simplifyAll:"off",
-                    nextSlideOnWindowFocus:"off",
-                    disableFocusListener:false,
-                }
-            })
+        if ( !$('#main_slider5').length ){
+            return;
         }
+        /* Mobile uses dedicated .mobile_hero — skip Revolution Slider */
+        if ( window.matchMedia('(max-width: 991px)').matches ){
+            return;
+        }
+        $("#main_slider5").revolution({
+            sliderType:"standard",
+            sliderLayout:"auto",
+            delay:4000000,
+            disableProgressBar:"on",
+            navigation: {
+                onHoverStop: 'off',
+                touch:{
+                    touchenabled:"on"
+                },
+                arrows: {
+                    style:"zeus",
+                    enable:true,
+                    hide_onmobile:true,
+                    hide_under:992,
+                    hide_onleave:true,
+                    hide_delay:200,
+                    hide_delay_mobile:1200,
+                    tmp:'<div class="tp-title-wrap">  	<div class="tp-arr-imgholder"></div> </div>',
+                    left: {
+                        h_align: "left",
+                        v_align: "center",
+                        h_offset: 50,
+                        v_offset: 0
+                    },
+                    right: {
+                        h_align: "right",
+                        v_align: "center",
+                        h_offset: 50,
+                        v_offset: 0
+                    }
+                },
+            },
+            responsiveLevels:[4096,1370,1199,992,767,480],
+            gridwidth:[1170,1170,970,750,700,400],
+            gridheight:[620,620,620,550,550,500],
+            lazyType:"smart",
+            fallbacks: {
+                simplifyAll:"off",
+                nextSlideOnWindowFocus:"off",
+                disableFocusListener:false,
+            }
+        })
     }
     main_slider5();
     

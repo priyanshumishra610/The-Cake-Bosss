@@ -387,6 +387,11 @@ i:before {
   margin-top: 70px;
 }
 
+/* Desktop: mobile hero is display:none, so pass offset to the slider */
+.main_header_area + .mobile_hero + .main_slider_area {
+  margin-top: 70px;
+}
+
 .main_header_area.navbar_fixed .main_menu_area {
   position: fixed;
   width: 100%;
@@ -6927,6 +6932,15 @@ i:before {
 }
 
 /* End Cursive accent headers
+============================================================================================ */
+
+/* Mobile Hero — hidden on desktop; enhanced in responsive.css
+============================================================================================ */
+.mobile_hero {
+  display: none;
+}
+
+/* End Mobile Hero
 ============================================================================================ */
 /*---------------------------------------------------- */
 
