@@ -454,6 +454,68 @@
     /*  Simple LightBox js
     /*----------------------------------------------------*/
     $('.imageGallery1 .light').simpleLightbox();
+
+	/*----------------------------------------------------*/
+    /*  Sweet Moments sequential autoplay
+    /*----------------------------------------------------*/
+	function sweetMomentsPlayer(){
+		var $root = $('#sweetMomentsPlayer');
+		if (!$root.length) return;
+
+		var $cards = $root.find('.sweet_moment_card');
+		var videos = $cards.find('.sweet_moment_video').toArray();
+		var index = 0;
+		var started = false;
+
+		function setActive(i){
+			$cards.removeClass('is-active');
+			$cards.eq(i).addClass('is-active');
+		}
+
+		function playAt(i){
+			index = i;
+			videos.forEach(function(video, n){
+				if (n === i) return;
+				video.pause();
+				try { video.currentTime = 0; } catch (e) {}
+			});
+			setActive(i);
+			var current = videos[i];
+			current.muted = true;
+			var playPromise = current.play();
+			if (playPromise && typeof playPromise.catch === 'function') {
+				playPromise.catch(function(){});
+			}
+		}
+
+		function playNext(){
+			playAt((index + 1) % videos.length);
+		}
+
+		videos.forEach(function(video, i){
+			video.addEventListener('ended', function(){
+				playNext();
+			});
+			$cards.eq(i).on('click', function(){
+				playAt(i);
+			});
+		});
+
+		function startWhenVisible(){
+			if (started || !videos.length) return;
+			var root = $root[0];
+			var rect = root.getBoundingClientRect();
+			var inView = rect.top < window.innerHeight * 0.9 && rect.bottom > 0;
+			if (inView) {
+				started = true;
+				playAt(0);
+			}
+		}
+
+		$(window).on('scroll load', startWhenVisible);
+		startWhenVisible();
+	}
+	sweetMomentsPlayer();
 	
 	
 })(jQuery)
