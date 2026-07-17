@@ -6688,6 +6688,37 @@ i:before {
   margin-bottom: 0px;
 }
 
+.f_contact_widget .f_whatsapp {
+  margin: 12px 0 8px;
+}
+
+.f_contact_widget .f_whatsapp a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #25d366;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+.f_contact_widget .f_whatsapp a:hover,
+.f_contact_widget .f_whatsapp a:focus {
+  color: #f195b2;
+  text-decoration: none;
+}
+
+.f_contact_widget .f_whatsapp .fa-whatsapp {
+  font-size: 18px;
+}
+
+.f_about_widget .nav li a .fa-whatsapp {
+  color: inherit;
+}
+
 .footer_copyright .copyright_inner {
   overflow: hidden;
   border-top: 1px solid #3b3e43;
