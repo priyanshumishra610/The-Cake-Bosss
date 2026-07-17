@@ -231,6 +231,30 @@
         })
     }
     main_slider5();
+
+    /*----------------------------------------------------*/
+    /*  Mobile Hero background slideshow
+    /*----------------------------------------------------*/
+    function mobileHeroSlideshow(){
+        var $hero = $('.mobile_hero');
+        if ( !$hero.length || !window.matchMedia('(max-width: 991px)').matches ){
+            return;
+        }
+        if ( window.matchMedia('(prefers-reduced-motion: reduce)').matches ){
+            return;
+        }
+        var $slides = $hero.find('.mobile_hero__img');
+        if ( $slides.length < 2 ){
+            return;
+        }
+        var index = 0;
+        setInterval(function(){
+            $slides.eq(index).removeClass('is-active');
+            index = (index + 1) % $slides.length;
+            $slides.eq(index).addClass('is-active');
+        }, 5200);
+    }
+    mobileHeroSlideshow();
     
     /*----------------------------------------------------*/
     /*  Cake Feature Slider

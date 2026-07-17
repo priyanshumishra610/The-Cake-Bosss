@@ -2283,10 +2283,29 @@
 		width: 112%;
 		height: 112%;
 		object-fit: cover;
-		object-position: center 32%;
-		transform-origin: 50% 40%;
-		animation: mobileHeroKen 18s ease-in-out infinite alternate;
-		will-change: transform;
+		object-position: center 30%;
+		opacity: 0;
+		transform: scale(1.04);
+		transition: opacity 1.2s ease, transform 8s ease;
+		will-change: opacity, transform;
+	}
+
+	.mobile_hero__img.is-active {
+		opacity: 1;
+		transform: scale(1.1);
+		z-index: 1;
+	}
+
+	.mobile_hero__img--1 {
+		object-position: center 22%;
+	}
+
+	.mobile_hero__img--2 {
+		object-position: center 40%;
+	}
+
+	.mobile_hero__img--3 {
+		object-position: center 45%;
 	}
 
 	.mobile_hero__glow {
@@ -2450,15 +2469,6 @@
 		}
 	}
 
-	@keyframes mobileHeroKen {
-		from {
-			transform: scale(1) translate3d(0, 0, 0);
-		}
-		to {
-			transform: scale(1.08) translate3d(0, -2%, 0);
-		}
-	}
-
 	@keyframes mobileHeroGlow {
 		from {
 			opacity: 0.75;
@@ -2481,7 +2491,15 @@
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		.mobile_hero__img,
+		.mobile_hero__img {
+			transition: none !important;
+			transform: none !important;
+		}
+
+		.mobile_hero__img.is-active {
+			opacity: 1;
+		}
+
 		.mobile_hero__glow,
 		.mobile_hero__scroll span,
 		.mobile_hero__brand,
@@ -2543,8 +2561,7 @@
 		inset: -6%;
 		width: 112%;
 		height: 112%;
-		animation: none;
-		object-position: 65% center;
+		object-position: center 35%;
 	}
 
 	.mobile_hero__content {
