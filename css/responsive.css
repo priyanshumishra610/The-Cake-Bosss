@@ -2180,3 +2180,65 @@
 		font-size: 13px;
 	}
 }
+
+
+/* Navbar brand — Times New Roman on mobile too */
+@media (max-width: 991px) {
+	.navbar-brand .brand_text {
+		font-family: "Times New Roman", Times, serif !important;
+		font-size: 18px !important;
+		font-weight: 700 !important;
+		white-space: nowrap;
+		max-width: none;
+	}
+
+	.sweet_moments_area .main_title h2 {
+		font-size: 40px !important;
+	}
+
+	.c_says_title h2,
+	.single_m_title h2 {
+		font-size: 36px !important;
+	}
+
+	.special_recipe_slider .item .media .media-body h4 {
+		font-family: "Great Vibes", cursive !important;
+		font-size: 34px !important;
+		font-weight: 400 !important;
+		line-height: 1.2 !important;
+	}
+
+	.arivals_chocolate .arivals_text h4 {
+		font-family: "Great Vibes", cursive !important;
+		font-size: 32px !important;
+		font-weight: 400 !important;
+	}
+
+	.main_w_title h2,
+	.single_pest_title h2 {
+		font-style: italic;
+	}
+}
+
+@media (max-width: 575px) {
+	.navbar-brand .brand_text {
+		font-size: 16px !important;
+	}
+
+	.sweet_moments_area .main_title h2 {
+		font-size: 34px !important;
+	}
+
+	.c_says_title h2,
+	.single_m_title h2 {
+		font-size: 30px !important;
+	}
+
+	.special_recipe_slider .item .media .media-body h4 {
+		font-size: 28px !important;
+	}
+
+	.arivals_chocolate .arivals_text h4 {
+		font-size: 26px !important;
+	}
+}
