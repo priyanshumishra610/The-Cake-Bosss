@@ -6909,9 +6909,21 @@ i:before {
   font-style: italic;
 }
 
-.f_title h3 {
-  font-family: "Playfair Display", serif;
-  font-style: italic;
+.footer_area .f_title h3,
+.footer_area .f_contact_widget h4,
+.footer_area .f_contact_widget p,
+.footer_area .f_contact_widget h5,
+.footer_area .f_about_widget p,
+.footer_area .f_link_widget .list_style li a,
+.footer_copyright {
+  font-family: "Open Sans", sans-serif !important;
+  font-style: normal !important;
+}
+
+.footer_area .f_title h3 {
+  font-family: "Open Sans", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 600;
 }
 
 /* End Cursive accent headers
