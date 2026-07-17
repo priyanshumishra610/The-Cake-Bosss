@@ -1825,17 +1825,44 @@
 
 
 /* ============================================================
-   Compact product/cake cards — mobile only (desktop untouched)
+   Mobile product UI polish (desktop untouched)
    ============================================================ */
 @media (max-width: 991px) {
 	.cake_feature_inner {
-		padding: 40px 0 50px !important;
+		padding: 36px 0 44px !important;
 	}
 
+	.pink_cake_feature .cake_feature_inner .title_view_all {
+		margin-bottom: 8px;
+	}
+
+	.main_w_title h2,
+	.single_pest_title h2,
+	.main_title h2 {
+		font-size: 26px !important;
+		line-height: 1.25;
+	}
+
+	.main_w_title h5 {
+		font-size: 13px !important;
+		line-height: 1.45;
+		opacity: 0.85;
+	}
+
+	/* Clean compact cake cards */
 	.cake_feature_item {
-		padding-bottom: 16px !important;
-		margin-bottom: 16px;
-		border-radius: 8px;
+		padding-bottom: 14px !important;
+		margin-bottom: 14px !important;
+		border-radius: 14px !important;
+		box-shadow: 0 6px 18px rgba(40, 40, 40, 0.08) !important;
+		background: #fff;
+		overflow: hidden;
+		height: 100%;
+	}
+
+	.cake_feature_item .cake_img {
+		border-radius: 0;
+		background: #faf4f6;
 	}
 
 	.cake_feature_item .cake_img img,
@@ -1846,34 +1873,58 @@
 	.similar_product_inner .cake_feature_item .cake_img img,
 	.arivals_slider .item .cake_feature_item .cake_img img {
 		width: 100% !important;
-		max-width: 140px !important;
-		height: 140px !important;
+		max-width: 100% !important;
+		height: auto !important;
+		aspect-ratio: 1 / 1;
 		object-fit: cover !important;
-		margin-left: auto;
-		margin-right: auto;
 		display: block;
+		margin: 0 !important;
+		border-radius: 0;
+	}
+
+	.cake_feature_item .cake_img:before {
+		display: none !important;
+	}
+
+	.cake_feature_item .cake_img:hover img {
+		transform: none !important;
 	}
 
 	.cake_feature_item .cake_text {
-		padding: 0 8px;
-	}
-
-	.cake_feature_item .cake_text h3 {
-		font-size: 15px !important;
-		margin-bottom: 6px;
-		line-height: 1.3;
+		padding: 10px 10px 0;
 	}
 
 	.cake_feature_item .cake_text h4 {
 		font-size: 14px !important;
-		margin-bottom: 10px;
+		font-weight: 700;
+		color: #f195b2 !important;
+		margin: 0 0 4px !important;
+		letter-spacing: 0.2px;
+	}
+
+	.cake_feature_item .cake_text h3 {
+		font-size: 14px !important;
+		line-height: 1.3 !important;
+		margin: 0 0 10px !important;
+		color: #454545;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		min-height: 0;
 	}
 
 	.cake_feature_item .cake_text .pest_btn {
-		min-height: 36px !important;
-		line-height: 36px !important;
+		display: inline-flex !important;
+		align-items: center;
+		justify-content: center;
+		min-height: 34px !important;
+		line-height: 1 !important;
 		padding: 0 14px !important;
-		font-size: 13px;
+		font-size: 12px !important;
+		border-radius: 20px !important;
+		width: auto;
+		max-width: 100%;
 	}
 
 	.cake_feature_main .cake_feature_row .cake_feature_item,
@@ -1882,45 +1933,118 @@
 		max-width: 100%;
 	}
 
+	.cake_feature_row > [class*="col-"],
+	.product_item_inner > [class*="col-"] {
+		margin-bottom: 4px;
+	}
+
+	/* Featured carousel: peek next card */
+	.cake_feature_slider .owl-stage-outer {
+		overflow: visible;
+	}
+
+	.cake_feature_slider .item {
+		padding: 0 6px;
+	}
+
+	.arivals_chocolate {
+		border-radius: 14px;
+		overflow: hidden;
+	}
+
 	.arivals_chocolate .arivals_pic img {
-		max-height: 220px;
-		width: 100%;
-		object-fit: cover;
-	}
-
-	.arivals_chocolate .arivals_text h4 {
-		font-size: 22px !important;
-		line-height: 1.3;
-	}
-
-	.arivals_chocolate .arivals_pic .price_text h5 {
-		font-size: 16px !important;
-	}
-
-	.service_m_item .service_img img,
-	.service_m_item .service_img .rounded-circle {
-		max-width: 110px !important;
-		width: 110px !important;
-		height: 110px !important;
-		object-fit: cover;
-	}
-
-	.service_m_item .service_text h4 {
-		font-size: 16px !important;
-	}
-
-	.welcome_bakery_inner .welcome_img img,
-	.our_bakery_image img {
 		max-height: 200px;
 		width: 100%;
 		object-fit: cover;
 	}
 
+	.arivals_chocolate .arivals_text {
+		padding: 16px 4px 0 !important;
+	}
+
+	.arivals_chocolate .arivals_text h4 {
+		font-size: 22px !important;
+		line-height: 1.3;
+		margin-bottom: 8px;
+	}
+
+	.arivals_chocolate .arivals_pic .price_text {
+		border-radius: 0 0 10px 0;
+	}
+
+	.arivals_chocolate .arivals_pic .price_text h5 {
+		font-size: 15px !important;
+	}
+
+	.service_m_item {
+		text-align: center;
+		padding: 8px;
+	}
+
+	.service_m_item .service_img_inner {
+		margin-bottom: 10px;
+	}
+
+	.service_m_item .service_img img,
+	.service_m_item .service_img .rounded-circle {
+		max-width: 96px !important;
+		width: 96px !important;
+		height: 96px !important;
+		object-fit: cover;
+		box-shadow: 0 6px 16px rgba(241, 149, 178, 0.2);
+	}
+
+	.service_m_item .service_text h4 {
+		font-size: 15px !important;
+		line-height: 1.35;
+	}
+
+	.welcome_bakery_inner .welcome_img img,
+	.our_bakery_image img {
+		max-height: 190px;
+		width: 100%;
+		object-fit: cover;
+		border-radius: 12px;
+	}
+
 	.s_left_img img,
 	.s_right_img img,
 	.s_item_right img {
-		max-height: 220px;
+		max-height: 200px;
 		object-fit: cover;
+		border-radius: 12px;
+	}
+
+	.special_recipe_area {
+		padding-top: 36px;
+		padding-bottom: 36px;
+	}
+
+	.special_recipe_slider .item .media .media-body {
+		padding: 0 12px;
+	}
+
+	/* Reels: polished small chips */
+	.sweet_moments_grid {
+		gap: 10px !important;
+		padding: 6px 14px 18px !important;
+	}
+
+	.sweet_moments_grid > [class*="col-"],
+	.sweet_moments_grid > .sweet_moment_slide {
+		flex: 0 0 132px !important;
+		max-width: 132px !important;
+		width: 132px !important;
+	}
+
+	.sweet_moment_card {
+		border-radius: 14px !important;
+		border-width: 2px;
+	}
+
+	.sweet_moments_hint {
+		font-size: 11px !important;
+		padding: 5px 10px !important;
 	}
 }
 
@@ -1930,85 +2054,76 @@
 	.our_bakery_image .col-6 {
 		padding-left: 6px !important;
 		padding-right: 6px !important;
-	}
-
-	.cake_feature_item .cake_img img,
-	.cake_feature_item .cake_img img.cake_product_img,
-	.cake_feature_slider .cake_feature_item .cake_img img,
-	.our_cakes_area .cake_feature_item .cake_img img,
-	.product_inner_row .cake_feature_item .cake_img img,
-	.similar_product_inner .cake_feature_item .cake_img img,
-	.arivals_slider .item .cake_feature_item .cake_img img {
-		max-width: 120px !important;
-		height: 120px !important;
+		max-width: 50% !important;
+		flex: 0 0 50% !important;
 	}
 
 	.cake_feature_item {
 		padding-bottom: 12px !important;
+		margin-bottom: 10px !important;
+		border-radius: 12px !important;
 	}
 
-	.cake_feature_item .cake_text h3 {
-		font-size: 14px !important;
+	.cake_feature_item .cake_text {
+		padding: 8px 8px 0;
 	}
 
 	.cake_feature_item .cake_text h4 {
 		font-size: 13px !important;
 	}
 
-	.main_w_title h2 {
+	.cake_feature_item .cake_text h3 {
+		font-size: 13px !important;
+		margin-bottom: 8px !important;
+	}
+
+	.cake_feature_item .cake_text .pest_btn {
+		min-height: 32px !important;
+		padding: 0 12px !important;
+		font-size: 11px !important;
+	}
+
+	.main_w_title h2,
+	.single_pest_title h2 {
 		font-size: 24px !important;
 	}
 
-	.main_w_title h5 {
-		font-size: 13px !important;
-		line-height: 1.4;
-	}
-
 	.arivals_chocolate .arivals_pic img {
-		max-height: 180px;
+		max-height: 170px;
 	}
 
 	.arivals_chocolate .arivals_text h4 {
 		font-size: 20px !important;
 	}
 
-	.single_pest_title h2 {
-		font-size: 24px !important;
+	.sweet_moments_grid > [class*="col-"],
+	.sweet_moments_grid > .sweet_moment_slide {
+		flex: 0 0 118px !important;
+		max-width: 118px !important;
+		width: 118px !important;
 	}
 }
 
 @media (max-width: 575px) {
-	.cake_feature_item .cake_img img,
-	.cake_feature_item .cake_img img.cake_product_img,
-	.cake_feature_slider .cake_feature_item .cake_img img,
-	.our_cakes_area .cake_feature_item .cake_img img,
-	.product_inner_row .cake_feature_item .cake_img img,
-	.similar_product_inner .cake_feature_item .cake_img img,
-	.arivals_slider .item .cake_feature_item .cake_img img {
-		max-width: 100px !important;
-		height: 100px !important;
-	}
-
-	.cake_feature_item .cake_text h3 {
-		font-size: 13px !important;
+	.container {
+		padding-left: 12px;
+		padding-right: 12px;
 	}
 
 	.cake_feature_item .cake_text h4 {
 		font-size: 12px !important;
 	}
 
-	.cake_feature_item .cake_text .pest_btn {
-		min-height: 32px !important;
-		line-height: 32px !important;
-		padding: 0 10px !important;
-		font-size: 12px;
+	.cake_feature_item .cake_text h3 {
+		font-size: 12px !important;
+		-webkit-line-clamp: 2;
 	}
 
 	.service_m_item .service_img img,
 	.service_m_item .service_img .rounded-circle {
-		max-width: 88px !important;
-		width: 88px !important;
-		height: 88px !important;
+		max-width: 80px !important;
+		width: 80px !important;
+		height: 80px !important;
 	}
 
 	.arivals_chocolate .arivals_pic img {
@@ -2018,30 +2133,50 @@
 	.arivals_chocolate .arivals_text h4 {
 		font-size: 18px !important;
 	}
+
+	.p_100 {
+		padding-top: 48px !important;
+		padding-bottom: 48px !important;
+	}
+
+	.sweet_moments_grid > [class*="col-"],
+	.sweet_moments_grid > .sweet_moment_slide {
+		flex: 0 0 108px !important;
+		max-width: 108px !important;
+		width: 108px !important;
+	}
+
+	.client_says_area {
+		padding-left: 4px;
+		padding-right: 4px;
+	}
+
+	.c_says_title h2 {
+		font-size: 24px !important;
+	}
 }
 
 @media (max-width: 480px) {
-	/* Keep 2-up grid but with compact cards (not full-width giants) */
 	.cake_feature_row .col-6,
 	.product_item_inner .col-6 {
 		max-width: 50% !important;
 		flex: 0 0 50% !important;
-	}
-
-	.cake_feature_item .cake_img img,
-	.cake_feature_item .cake_img img.cake_product_img,
-	.cake_feature_slider .cake_feature_item .cake_img img,
-	.our_cakes_area .cake_feature_item .cake_img img,
-	.product_inner_row .cake_feature_item .cake_img img,
-	.similar_product_inner .cake_feature_item .cake_img img,
-	.arivals_slider .item .cake_feature_item .cake_img img {
-		max-width: 92px !important;
-		height: 92px !important;
+		padding-left: 5px !important;
+		padding-right: 5px !important;
 	}
 
 	.our_cakes_area .cake_feature_row .cake_feature_item,
 	.cake_feature_main .cake_feature_row .cake_feature_item {
 		max-width: 100% !important;
-		margin: 0 0 12px !important;
+		margin: 0 0 8px !important;
+	}
+
+	.cake_feature_item {
+		border-radius: 10px !important;
+		box-shadow: 0 4px 12px rgba(40, 40, 40, 0.07) !important;
+	}
+
+	.footer_area {
+		font-size: 13px;
 	}
 }
